@@ -9,3 +9,23 @@
     
     <div id="userQuery" style="margin-top: 15px; color: var(--neon-cyan); font-style: italic;"></div>
 </div>
+
+async function sendToAI(userSpeech) {
+    try {
+        const response = await fetch('/api/ask-gemini', { // Vercel API URL
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ question: userSpeech })
+        });
+
+        const data = await response.json();
+        
+        if (data.answer) {
+            // AI தரும் பதிலை திரையில் காட்ட அல்லது பேச வைக்க
+            document.getElementById('ai-response').innerText = data.answer;
+            speak(data.answer); // வாய்ஸ் பதில் சொல்ல
+        }
+    } catch (error) {
+        console.error("Error connecting to AI:", error);
+    }
+}
