@@ -37,4 +37,9 @@ app.post('/api/ask-gemini', async (req, res) => {
     }
 });
 
-app.listen(5000, () => console.log("FEAR AI Server is Live on Port 5000"));
+// இந்த வரியைச் சேர்க்கவும் (Vercel-க்கு இதுதான் முக்கியம்)
+module.exports = app;
+
+// பழைய app.listen வரியை நீக்கிவிடலாம் அல்லது அப்படியே விடலாம்
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`FEAR AI Server is Live on Port ${PORT}`));
