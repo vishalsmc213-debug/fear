@@ -192,3 +192,16 @@
     </script>
 </body>
 </html>
+
+async function fixCode() {
+    const codeInput = document.getElementById('code-input').value;
+
+    const response = await fetch('/api/fix-code', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: codeInput })
+    });
+
+    const data = await response.json();
+    document.getElementById('code-output').value = data.fixedCode;
+}
