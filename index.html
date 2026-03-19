@@ -235,6 +235,34 @@
                2. Pin Connection: Connect Motor 1 to GPIO 12...<br>
                3. Code: Upload the provided AI-optimized script...</p>
         </div>
+        <script>
+async function askAI() {
+    // 1. பயனரின் கேள்வியை எடுப்பது (உதாரணமாக ஒரு இன்புட் பாக்ஸில் இருந்து)
+    const userQuestion = "How to build a drone?"; // இதை நீங்கள் இன்புட்டில் இருந்து எடுக்கலாம்
+    const responseBox = document.getElementById('response-box');
+
+    responseBox.innerText = "Thinking... 🧠";
+
+    try {
+        // 2. உங்கள் Vercel Server-க்கு அனுப்புவது
+        const response = await fetch('/api/ask-gemini', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ question: userQuestion })
+        });
+
+        const data = await response.json();
+
+        // 3. AI பதிலைக் காட்டுவது
+        if (data.answer) {
+            responseBox.innerText = data.answer;
+        }
+    } catch (err) {
+        console.error(err);
+        responseBox.innerText = "Error connecting to AI!";
+    }
+}
+</script>
     </div>
 </body>
 </html>
