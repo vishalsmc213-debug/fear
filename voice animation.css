@@ -1,0 +1,10 @@
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(188, 19, 254, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(188, 19, 254, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(188, 19, 254, 0); }
+}
+
+.recording {
+    animation: pulse 1.5s infinite;
+    background: #ff0055 !important; /* ரெக்கார்டிங் செய்யும்போது சிவப்பு நிறம் */
+}
