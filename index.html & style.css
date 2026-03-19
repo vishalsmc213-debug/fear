@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEAR - AI Innovation Hub</title>
+    <style>
+        :root {
+            --primary-bg: #0a0b1e;
+            --card-bg: #161b33;
+            --neon-cyan: #00f2ff;
+            --neon-purple: #bc13fe;
+            --neon-green: #39ff14;
+            --text-white: #ffffff;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-white);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(22, 27, 51, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+            letter-spacing: 3px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--neon-cyan); }
+
+        .pricing-btn {
+            background: linear-gradient(45deg, var(--neon-purple), #7a00ff);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, var(--neon-cyan), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subscription-box {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .sub-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--neon-cyan);
+            min-width: 200px;
+        }
+
+        /* AI Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 5%;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.4s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+        }
+
+        .icon { font-size: 40px; margin-bottom: 15px; display: block; }
+
+        .buy-btn {
+            background: transparent;
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        /* Project Detail Modal Simulation */
+        .project-preview {
+            background: var(--card-bg);
+            margin: 40px 5%;
+            padding: 30px;
+            border-radius: 25px;
+            border: 2px solid var(--neon-purple);
+        }
+
+        .project-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .box {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .box img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        h3 { color: var(--neon-cyan); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">FEAR</div>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">SMART SUGGESTIONS</a>
+            <a href="#">QUESTION SOLVER</a>
+            <a href="#">ERROR FIXER</a>
+            <button class="pricing-btn">SUBSCRIPTION</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>FEAR: The Ultimate AI Innovation Hub</h1>
+        <p>நாளை உருவாக்கப்போகும் படைப்பாளிகளுக்கான சிறந்த தளம்!</p>
+        
+        <div class="subscription-box">
+            <div class="sub-card">
+                <h3>FREE TRIAL</h3>
+                <p>1 Week Access</p>
+            </div>
+            <div class="sub-card">
+                <h3>PREMIUM</h3>
+                <p>₹50 / Month</p>
+                <small>Unlimited AI Tools</small>
+            </div>
+        </div>
+    </section>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <span class="icon">🤖</span>
+            <h3>Smart Project Suggestion AI</h3>
+            <p>Get unique ideas for projects!</p>
+            <button class="buy-btn">Get Ideas (₹10-20/Plan)</button>
+        </div>
+        <div class="feature-card">
+            <span class="icon">📷</span>
+            <h3>Photo Question Solver</h3>
+            <p>Snapshot your doubt, get instant solutions!</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">💻</span>
+            <h3>Code Error Fix</h3>
+            <p>Clean your bugs with AI precision.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🎙️</span>
+            <h3>AI Voice Ask</h3>
+            <p>Ask anything via voice commands.</p>
+        </div>
+    </div>
+
+    <div class="project-preview">
+        <h2>Autonomous Drone Scout (IoT Project)</h2>
+        <div class="project-content">
+            <div class="box">
+                <h3>3D Model</h3>
+                <div style="height: 150px; background: #333; display: flex; align-items: center; justify-content: center;">[ 3D Drone View ]</div>
+            </div>
+            <div class="box">
+                <h3>Circuit Diagram</h3>
+                <div style="height: 150px; background: #333; display: flex; align-items: center; justify-content: center;">[ ESP32 Wiring ]</div>
+            </div>
+            <div class="box">
+                <h3>Outcome</h3>
+                <div style="height: 150px; background: #333; display: flex; align-items: center; justify-content: center;">[ Final Project Image ]</div>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <h3>Step-by-Step Instructions</h3>
+            <p>1. Components list: ESP32, BLDC Motors, GPS Module...<br>
+               2. Pin Connection: Connect Motor 1 to GPIO 12...<br>
+               3. Code: Upload the provided AI-optimized script...</p>
+        </div>
+    </div>
+
+</body>
+</html>
